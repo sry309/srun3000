@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<title>校园网账号 获取系统</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+		<link rel="stylesheet" type="text/css" href="css/home.css">
+
+	</head>
+
+	<body>
+		<section class="aui-content">
+			<div style="height:20px;"></div>
+			<div class="aui-content-up">
+				<form action="find.php" name="form1" method="post">
+					<div class="aui-content-up-form">
+						<h1>校园网账号 获取系统</h1>
+						<h2>官网:  <a href="http://www.mimaz.org" target="_blank">www.mimaz.org</a></h2>
+					</div>
+					<div class="aui-form-group clear">
+						<label class="aui-label-control">
+					账号前9位: <em>*</em>
+				</label>
+						<div class="aui-form-input">
+							<input type="text" class="aui-form-control-two" name="phone" required id="1" placeholder="例如：155662800" onBlur="check1()" required>
+							<span class="tips" id="phone1">长度9个数字</span>
+						</div>
+					</div>
+					<div class="aui-form-group clear">
+						<label class="aui-label-control">
+					账号后2位: <em>*</em>
+				</label>
+						<div class="aui-form-input">
+							<input type="text" class="aui-form-control-two" name="four" required id="1" placeholder="例如：00" onBlur="check2()" required>
+							<span class="tips" id="four">长度2个数字</span>
+						</div>
+					</div>
+					<div class="aui-form-group clear">
+						<label class="aui-label-control">
+					密 码: <em>*</em>
+				</label>
+						<div class="aui-form-input">
+							<input type="text" class="aui-form-control-two" name="password" required id="1" placeholder="例如：000000" onBlur="check3()" required>
+							<span class="tips" id="pass">长度6个数字</span>
+						</div>
+					</div>
+					
+			<div class="aui-form-group clear">
+				<label class="aui-label-control">
+					自助服务IP: 
+				</label>
+				<div class="aui-form-input">
+					<input type="text" class="aui-form-control-two" name="ip" required id="1" placeholder="您学校自助服务IP地址，例如：1.1.1.1" onBlur="check4()" required>
+					<span class="tips" id="pass"><a>（了解获取方法）</a></span>
+				</div>
+				<!--
+			</div>
+				<div class="aui-form-group clear">
+				<label class="aui-label-control">
+					选择大学: 
+				</label>
+				<div class="aui-form-input">
+						<select name="school"> 
+               <option value="ustl">辽宁科技大学</option> 
+                        </select>
+				</div>
+				-->
+			</div>
+					<strong>原理：</br> --> 通过你指定的密码，和你输入的账号后两位（建议输入00），系统会遍历账号的后两位，匹配正确密码的账号。</strong></br>
+					</br>
+					<strong>说明：</br>1.该系统根据深蓝系统的某处BUG，可以遍历获取指定密码的账号，仅适用于深蓝校园网系统。</br>
+				                    2.获取账号大概需要2-3分钟，请您耐心等待程序加载，不要重复点击获取账号！加载慢是正常情况！</br>
+				                    3.如回显账号密码为空，说明该号段无可用账号。</br>
+				                    4.如您有什么疑问，请发送邮件至song@mimaz.org 我看到后会尽快回复你。</strong></br>
+					</br>
+					<strong>内测：</br> --> 不必填写自助服务IP和选择大学，该功能为内测功能，后续会加入全国大学的账号获取功能。</strong></br>
+					</br>
+					<strong>开源：</br> --> 项目暂时不开源。其他开源项目:<a href="https://github.com/MIMAZHAN" target="_blank">https://github.com/MIMAZHAN</a></strong></br>
+					</br>
+
+			</div>
+			<div class="aui-btn-default">
+				<input class="aui-btn aui-btn-account" name="submit" type="submit" id="btn" value="获取账号">&nbsp&nbsp&nbsp&nbsp&nbsp
+				<a href="javascript:alert('暂时关闭赞助系统')" target="_blank"><input class="aui-btn aui-btn-account" name="zanzhu" type="text" id="btn1" value="赞助一下"></a>
+			</div>
+			</form>
+		</section>
+		<!-- mask end -->
+		<script type="text/javascript">
+			function check1() {
+
+				na = form1.phone.value;
+
+				if(na.length != 9)
+
+				{
+
+					phone1.innerHTML = '<font class="tips_false">必须是9位的数字</font>';
+
+				} else {
+
+					phone1.innerHTML = '<font class="tips_true">输入正确</font>';
+
+				}
+
+			}
+
+			function check2() {
+
+				na1 = form1.four.value;
+
+				if(na1.length != 2)
+
+				{
+
+					four.innerHTML = '<font class="tips_false">必须是2位的数字</font>';
+
+				} else {
+
+					four.innerHTML = '<font class="tips_true">输入正确</font>';
+
+				}
+
+			}
+
+			function check3() {
+
+				na2 = form1.password.value;
+
+				if(na2.length == "")
+
+				{
+
+					pass.innerHTML = '<font class="tips_false">密码不能为空！</font>';
+
+				} else {
+
+					pass.innerHTML = '<font class="tips_true">输入正确</font>';
+
+				}
+
+			}
+		</script>
+		<script>
+			alert('如您第一次使用系统，务必阅读：原理，说明，测试项！')
+		</script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/up.js"></script>
+		<script type="text/javascript">
+			< /body> <
+			/html>
